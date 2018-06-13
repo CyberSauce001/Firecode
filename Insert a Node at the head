@@ -1,0 +1,27 @@
+//First Version
+
+listNode* insert_at_head( listNode* head, int data)
+{
+    
+    return new listNode{data,head};
+
+    
+}
+
+
+
+//Second version
+
+listNode* insert_at_head( listNode* head, int data)
+{
+    
+    listNode* temp = new listNode;
+    temp->value = data;
+    temp->next = head;
+
+    return temp;
+}
+
+
+
+//Both version works, it depends on which is easier for you to understand
