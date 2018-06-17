@@ -1,0 +1,30 @@
+//This is finding the unique number in the array
+int single_number(int arr[], int sz)
+{
+
+    int temp = 0;
+    for (int i = 0; i < sz; i++)
+    {
+        temp = temp ^ arr[i];
+    }
+    return temp;  
+}
+//Note: This is a learning process for me, I do not take credit for other people solution. 
+//I learn from their code, why they code that way, and improve my coding skills along the way.
+
+//A proper solution I found by the user Sen
+//The top part is what I coded, I found out that it will not work for some special test case,
+//as it is very weak and need to add more condition to it in order for it to pass all test case.
+int single_number(int arr[], int sz)
+{
+    unordered_map<int, int> hash;
+    for (int i = 0; i < sz; ++i) {
+        ++hash[arr[i]];
+    }
+    
+    for (auto it = hash.begin(); it != hash.end(); ++it) {
+        if (it->second == 1) return it->first;
+    }
+    
+    return 0;
+}
