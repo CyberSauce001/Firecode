@@ -1,0 +1,41 @@
+//Either Version works fine, but the more optimize is the second version, 
+the first version gives you a visual on how bubble sort works
+
+//First Version
+int* bubble_sort_array(int arr[], int size){
+    
+
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = i+1; j < size; j++)
+        {
+            if (arr[j] < arr[i])
+            {
+                int temp;
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    
+    return arr;
+}
+
+
+//Second Version
+int* bubble_sort_array(int arr[], int size){
+    bool sorted = false;
+    while(!sorted){
+        sorted = true;
+        for(int i = 1; i < size; i++){
+            if(arr[i - 1] > arr[i]){
+                swap(arr[i - 1], arr[i]);
+                sorted = false;
+            }
+        }
+    }
+
+   
+    return arr;
+}
